@@ -602,7 +602,7 @@ static void input__unregister_listener(rizz_input_listener listener_id)
     for (int i = 0, ic = sx_array_count(g_input.listeners); i < ic; i++) {
         if (g_input.listeners[i].m_id == _id) {
             g_input.mgr->RemoveListener(g_input.listeners[i].m_id);
-            sx_array_pop(g_input.listeners, i);
+            sx_array_pop(&g_input.listeners, i);
             break;
         }
     }
